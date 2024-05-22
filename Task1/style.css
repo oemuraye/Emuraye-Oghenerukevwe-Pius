@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../utils/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff') format('woff2'),
+        url('../utils/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../utils/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2') format('woff2'),
+        url('../utils/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-MediumItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --basic_background: #1c2127;
+    --section_background: #32383F;
+    --ash-text_color: #A7B1BC;
+    --white_color: #fff;
+    --basic_dark: #12171D;
+    --bg_active-color: #252A30;
+    --basic_green: #00C076;
+}
+
+* {
+    box-sizing: border-box;
+    /* padding: 0;
+    margin: 0;      */
+}
+
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--basic_background);
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* utils */
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+
+.d-flex_h {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.d-flex_h__between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.d-flex_v {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.hide_on_desktop {
+    display: none;
+}
+@media (max-width: 768px) {
+    .hide_on_mobile {
+        display: none;
+    }
+    .hide_on_desktop {
+        display: block;
+    }
+}
+
+
+
+
+/* Header Section */
+.home-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.header__nav {
+    padding: 5px 10px;
+    background-color: var(--section_background);
+    position: relative;
+}
+.header-logo {
+    border-right: 2px solid var(--ash-text_color);
+    padding-right: 15px;
+}
+.header-menu_links {
+    gap: 30px;
+}
+.header-menu_links a {
+    color: var(--ash-text_color);
+}
+.header-menu_links a.hover,
+.header-menu_links a.active {
+    color: var(--white_color);
+}
+
+.user-profile {
+    background-color: var(--basic_dark);
+    border: 1px solid #32383F;
+    border: 0px, 0px, 1px, 0px;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+.user-profile .profile-pic {
+    height: 32px;
+    width: 32px;
+    border-radius: 100px;
+    border: 1.26px solid #F0A0A0;
+}
+.user-profile .profile-pic img {
+    max-width: 100%;
+    object-fit: contain;
+    height: auto;
+}
+.user-profile span {
+    color: var(--ash-text_color);
+    font-size: 14px;
+}
+
+
+.coin-info_section {
+    background-color: var(--section_background);
+    padding: 5px 10px;
+}
+.coin-info_section .d-flex_h {
+    align-items: center;
+}
+.coin-info_section h3 {
+    color: #fff;
+    font-weight: normal;
+}
+.coin-info_section .fa-angle-down {
+    color: #fff;
+    margin-left: 5px;
+}
+.coin-info_section .coin-price {
+    color: var(--basic_green);
+    font-size: 18px;
+}
+
+
+.price-info .prices {
+    border-left: 2px solid #EAF0FE;
+    padding-left: 10px;
+    color: var(--ash-text_color);
+}
+.price-info .prices span {
+    font-size: 12px;
+}
+.price-info .prices .price-percentage {
+    font-size: 14px;
+    color: var(--basic_green);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Screen Responsiveness */
+
+@media (max-width: 767px) {
+    /* Header Section */
+    .header-logo {
+        border-right: none;
+        padding-right: 0;
+    }
+    .header-menu_links {
+        flex-direction: column;
+        position: absolute;
+        gap: 0px;
+        right: 0;
+        top: 20px;
+        width: 214px;
+        background-color: var(--basic_background);
+        padding: 0;
+        border-radius: 12px;
+        border: 1px solid #373B3F;
+    }
+    .header-menu_links li {
+        padding: 10px 30px;
+        width: 100%;
+        cursor: pointer;
+    }
+    .header-menu_links a {
+        color: var(--white_color);
+        width: 100%;
+    }
+    .header-menu_links li:hover,
+    .header-menu_links a.active,
+    .header-menu_links li.active {
+        background-color: var(--bg_active-color);
+        color: var(--white_color);
+    }
+
+}
