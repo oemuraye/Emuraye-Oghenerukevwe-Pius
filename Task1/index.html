@@ -6,6 +6,7 @@
     <title>Sisyphus</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="./script.js"></script>
 </head>
 <body>
     <header class="home-header">
@@ -35,7 +36,7 @@
                 <div class="d-flex_h hide_on_desktop">
                     <span class="profile-pic"><img src="../utils/images/userImg.png" alt=""></span>
                     <a href=""><img src="../utils/images/glodeIcon.png" alt=""></a>
-                    <a class="" href=""><img src="../utils/images/menuBtn.png" alt=""></a>
+                    <span class="menu-toggle_btn"><img src="../utils/images/menuBtn.png" alt=""></span>
                 </div>
             </section>
         </nav>
@@ -54,6 +55,33 @@
                             <i class="fa-regular fa-clock"></i>
                             24h change
                         </span>
+                        <span class="price-percentage increase-color">540.80 +1.25%</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="prices d-flex_v">
+                        <span>
+                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                            24h change
+                        </span>
+                        <span class="price-percentage">540.80 +1.25%</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="prices d-flex_v">
+                        <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                            24h change
+                        </span>
+                        <span class="price-percentage">540.80 +1.25%</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="prices d-flex_v">
+                        <span>
+                            <i class="fa-regular fa-chart-bar"></i>
+                            24h change
+                        </span>
                         <span class="price-percentage">540.80 +1.25%</span>
                     </div>
                 </li>
@@ -61,8 +89,317 @@
         </section>
     </header>
 
-    <main></main>
-    <section></section>
-    <footer></footer>   
+    <main class="main-content">
+        <section class="trading-section">
+            <section class="trading-chart">
+                <img src="../utils/images/Trading view.png" alt="trading" width="100%" height="">
+            </section>
+            <section class="trading-stats">
+                <div class="trading-stats_tab">
+                    <div data-tab="order-tab" class="trading-stats_tab1 active"><h6>Order Book</h6></div>
+                    <div data-tab="trade-tab" class="trading-stats_tab2"><h6>Recent trades</h6></div>
+                </div>
+                <div id="order-tab" class="trading_tab-content active">
+                    <section class="order-tab_filter d-flex_h__between">
+                        <div class="success-filter d-flex_h">
+                            <img class="active" src="../utils/images/filter1.png" alt="filter-icon">
+                            <img src="../utils/images/filter2.png" alt="filter-icon">
+                            <img src="../utils/images/filter3.png" alt="filter-icon">
+                        </div>
+                        <div class="num-filter d-flex_h">
+                            <h5>10</h5>
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </div>
+                    </section>
+
+                    <section class="order-records_table">
+                        <div class="order-records__title d-flex_h">
+                            <div>
+                                <h6>Price</h6>
+                                <span>(USDT)</span>
+                            </div>
+                            <div>
+                                <h6>Amounts</h6>
+                                <span>(BTC)</span>
+                            </div>
+                            <div>
+                                <h6>Total</h6>
+                            </div>
+                        </div>
+
+                        <section class="order-records_details downward_decrease d-flex_v">
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_red progress_width-50"></div>
+                            </div>
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_red progress_width-1"></div>
+                            </div>
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_red progress_width-50"></div>
+                            </div>
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_red progress_width-1"></div>
+                            </div>
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_red progress_width-100"></div>
+                            </div>
+                        </section>
+
+                        <section class="order-records_summary d-flex_h">
+                            <h4 class="success_increase">36,642.20</h4>
+                            <i class="fa fa-arrow-up success_increase" aria-hidden="true"></i>
+                            <h4 class="downward_decrease">36,642.20</h4>
+                        </section>
+
+                        <section class="order-records_details success_increase d-flex_v">
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_green progress_width-50"></div>
+                            </div>
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_green progress_width-1"></div>
+                            </div>
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_green progress_width-50"></div>
+                            </div>
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_green progress_width-1"></div>
+                            </div>
+                            <div class="d-flex_h">
+                                <div>
+                                    <h6 class="records__row1">36920.12</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row2">0.758965</h6>
+                                </div>
+                                <div>
+                                    <h6 class="records__row3">28,020.98</h6>
+                                </div>
+                                <div class="progress_green progress_width-100"></div>
+                            </div>
+                        </section>
+                    </section>
+
+                </div>
+                <div id="trade-tab" class="trading_tab-content">
+                    <h2>Recent Trades Content</h2>
+                    <p>This is the content for the Recent Trades tab.</p>
+                </div>
+            </section>
+
+        </section>
+        
+        <section class="summary_section">
+            <section class="summary_tab-title">
+                <div class="summary_tab">
+                    <div data-tab="summary_tab1" class="summary_tab1 active"><h6>Open Orders</h6></div>
+                    <div data-tab="summary_tab2" class="summary_tab2"><h6>Positions</h6></div>
+                    <div data-tab="summary_tab3" class="summary_tab3"><h6>Order History</h6></div>
+                    <div data-tab="summary_tab4" class="summary_tab4"><h6>Trade History</h6></div>
+                </div>
+            </section>
+
+            <section id="summary_tab1" class="summary_tab-content">
+                <div class="open-orders_section">
+                    <section class="no-open_orders">
+                        <div class="">
+                            <h4>No Open Orders</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto esse, officia nemo quam qui itaque quasi ea iste aliquid?</p>              
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section id="summary_tab2" class="summary_tab-content">
+                <h2>Positions Content</h2>
+            </section>
+            <section id="summary_tab3" class="summary_tab-content">
+                <h2>Order History Content</h2>
+            </section>
+            <section id="summary_tab4" class="summary_tab-content">
+                <h2>Trade History Content</h2>
+            </section>
+        </section>
+
+        <aside>
+            <section class="tabs">
+                <div class="tab active" data-tab="tab1">Buy</div>
+                <div class="tab" data-tab="tab2">Sell</div>
+            </section>
+            <section id="tab1" class="tab-content active">
+                <section class="buy-tab_section">
+                    <section class="d-flex_h">
+                        <div data-tab="buy-tab1" class="buy-tab1 active">Limit</div>
+                        <div data-tab="buy-tab2" class="buy-tab2">Market</div>
+                        <div data-tab="buy-tab3" class="buy-tab3">Stop-Limit</div>
+                    </section>
+    
+                    <section id="limit-tab" class="buy-tab_content d-flex_v">
+                        <div class="limit-tab d-flex_h">
+                            <div class="d-flex_h">
+                                <span>Limit price</span>
+                                <img src="../utils/images/exclamation.png" alt="icon">
+                            </div>
+                            <div>0.00 USD</div>
+                        </div>
+                        <div class="limit-tab d-flex_h">
+                            <div class="d-flex_h">
+                                <span>Amount</span>
+                                <img src="../utils/images/exclamation.png" alt="icon">
+                            </div>
+                            <div>0.00 USD</div>
+                        </div>
+                        <div class="limit-tab d-flex_h">
+                            <div class="d-flex_h">
+                                <span>Type</span>
+                                <img src="../utils/images/exclamation.png" alt="icon">
+                            </div>
+                            <div>
+                                Good till cancelled
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="post-checkbox d-flex-h ">
+                            <input type="checkbox" checked="checked">
+                            <!-- <label class="chexk-container">
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label> -->
+                            <span>Post Only</span>
+                            <img src="../utils/images/exclamation.png" alt="icon">
+                        </div>
+    
+                        <div class="purchase_section d-flex_v">
+                            <div class="d-flex_h__between">
+                                <h4>Total</h4>
+                                <h4>0.00</h4>
+                            </div>
+                            <div class="purchase-btn">
+                                <button>Buy BTC</button>
+                            </div>
+                        </div>
+    
+                        <hr>
+    
+                        <div class="purchase-info d-flex_v">
+                            <div class="d-flex_h__between">
+                                <h6>Total account value</h6>
+                                <h6>NGN <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
+                            </div>
+                            <h5>0.00</h5>
+                        </div>
+    
+                        <div class="purchase-info d-flex_v">
+                            <div class="d-flex_h__between">
+                                <h6>Open Orders</h6>
+                                <h6>Available</h6>
+                            </div>
+                            <h5>0.00</h5>
+                        </div>
+    
+                        <button class="deposit-btn">Deposit</button>
+                    </section>
+    
+                    <section id="market-tab" class="buy-tab_content"></section>
+                    <section id="stop_limit-tab" class="buy-tab_content"></section>
+                </section>
+            </section>
+            
+            <section id="tab2" class="tab-content">
+                <h2>Sell Content</h2>
+            </section>
+        </aside>
+    </main>
+    
+    <footer class="footer">
+        <h5>&copy; 2024 Your Company Name. All Rights Reserved.</div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <a href="#">Contact Us</a>
+    </footer> 
 </body>
 </html>
