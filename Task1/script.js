@@ -72,3 +72,4 @@ const initializeTabs = (tabSelector, contentSelector) => {
 initializeTabs('.trading-stats_tab', '.trading_tab-content');
 initializeTabs(".summary_tab", ".summary_tab-content")
 
+
