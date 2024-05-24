@@ -1,0 +1,28 @@
+/* -------------- */
+/* footer section */
+/* ------------ */
+.footer {
+    background-color: var(--section_background);
+    border-radius: 8px;
+    color: var(--ash-text_color);
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 15px;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.footer .social-icons {
+    margin: 10px 0;
+}
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+.footer .social-icons a:hover {
+    color: #007bff;
+}

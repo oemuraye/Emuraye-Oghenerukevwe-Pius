@@ -233,11 +233,12 @@ h6 {
 .trading-chart_keys {
     color: var(--ash-text_color);
     font-weight: 500;
-    margin: 10px 0;
+    margin-bottom: 10px;
     gap: 15px;
     padding: 15px;
     background-color: var(--section_background);
     border-radius: 8px;
+    flex-wrap: wrap;
 }
 .trading-chart_keys .interval {
     cursor: pointer;

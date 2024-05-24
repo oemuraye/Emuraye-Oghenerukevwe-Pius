@@ -1,0 +1,141 @@
+.trading-section {
+    display: grid;
+    grid-template-columns: 65% 34%;
+    justify-content: space-between;
+    width: 74.4%;
+}
+.trading-stats {
+    position: relative;
+    width: 100%;
+    background-color: var(--section_background);
+    border-radius: 8px;
+    padding: 10px;
+}
+.trading-chart_keys {
+    color: var(--ash-text_color);
+    font-weight: 500;
+    margin-bottom: 10px;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--section_background);
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+.trading-chart_keys .interval {
+    cursor: pointer;
+}
+.interval.active {
+    font-weight: bold;
+    background-color: var(--ash-text_color2); 
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+.trading-chart_keys .fa-angle-down {
+    font-size: 10px;
+    position: relative;
+    top: -2px;
+}
+.trading-stats_tab {
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    /* padding: 10px; */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    color: var(--ash-text_color);
+    background-color: var(--tab-bg_color);
+}
+.trading-stats_tab div {
+    background-color: var(--tab-bg_color);
+    color: var(--ash-text_color);
+    padding: 10px 20px;
+    border-bottom: none;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    width: 50%;
+}
+.trading-stats_tab .active {
+    color: var(--white_color);
+    background-color: var(--tab-bg_color2);
+    box-shadow: 0px 3px 1px 0px #0000000A;
+    box-shadow: 0px 3px 8px 0px #0000001F;
+    margin: 1px;
+}
+.trading_tab-content {
+    display: none;
+}
+.trading_tab-content.active {
+    display: block;
+}
+
+.order-tab_filter .success-filter img {
+    padding: 10px;
+}
+.order-tab_filter .success-filter img.active {
+    border-radius: 4px;
+    background-color: var(--ash-text_color3);
+}
+.order-tab_filter .num-filter {
+    background-color: var(--ash-text_color3);
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #F4F5F6;
+    font-size: 12px;
+}
+
+.order-records_table .order-records__title {
+    justify-content: space-around;
+    color: var(--ash-text_color);
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.order-records_table .order-records_details {
+    margin: 20px 0;
+    gap: 25px;
+}
+.order-records_table .order-records_details .d-flex_h {
+    justify-content: space-around;
+    font-weight: 500;
+    color: var(--white_color);
+    position: relative;
+}
+.progress_red {
+    position: absolute;
+    right: 0;
+    background-color: #ff673821;
+    height: 28px;
+}
+.progress_green {
+    position: absolute;
+    right: 0;
+    background-color: #25c26e18;
+    height: 28px;
+}
+.progress_width-100 {
+    width: 100%;
+}
+.progress_width-50 {
+    width: 50%;
+}
+.progress_width-1 {
+    width: 1%;
+}
+
+.success_increase,
+.order-records_summary  .success_increase,
+.order-records_table .success_increase .records__row1 {
+    color: var(--basic_green);
+}
+
+.order-records_table .downward_decrease .records__row1 {
+    color: var(--basic-red);
+}
+
+.order-records_summary {
+    justify-content: center;
+    color: var(--white_color);
+    margin: 30px 5px;
+}

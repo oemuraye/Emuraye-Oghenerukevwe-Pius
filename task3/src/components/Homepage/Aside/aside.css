@@ -1,0 +1,157 @@
+aside {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    width: 25%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--section_background);
+}
+.tabs {
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 15px;
+    background-color: var(--tab-bg_color);
+    /* justify-content: space-around; */
+    border-radius: 8px;
+    width: 100%;
+}
+
+.tabs div {
+    background-color: var(--tab-bg_color);
+    color: var(--ash-text_color);
+    padding: 10px 20px;
+    border-bottom: none;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    width: 50%;
+}
+
+.tabs div.active {
+    background-color: var(--tab-bg_color2);
+    color: var(--white_color);
+    border: 1px solid var(--border-green);
+    border-radius: 8px;
+}
+
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+
+.buy-tab_section > section {
+    justify-content: space-around;
+    font-size: 14px;
+    color: var(--ash-text_color2);
+}
+.buy-tab_section > section div.active {
+    padding: 6px 12px 6px 12px;
+    background-color: var(--ash-text_color3);
+    color: var(--white_color);
+    border-radius: 100px;
+    font-weight: bold;
+}
+.buy-tab_section .buy-tab1,
+.buy-tab_section .buy-tab2,
+.buy-tab_section .buy-tab3 {
+    cursor: pointer;
+}
+
+#limit-tab.d-flex_v {
+    gap: 15px;
+    padding: 10px;
+}
+
+#limit-tab .limit-tab input,
+#limit-tab .limit-tab select {
+    color: var(--ash-text_color);
+    font-size: 12px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    width: 100%; 
+    border: none;
+    background-color: var(--section_background);
+}
+
+#limit-tab .limit-tab select {
+    cursor: pointer;
+}
+#limit-tab .limit-tab select option {
+    cursor: pointer;
+    /* border: 1px solid #373B3F; */
+    padding: 13px 16px 13px 16px;
+    border-radius: 8px;
+    /* width: 214px; */
+    padding: 0;
+    border-radius: 12px;
+    background-color: var(--basic_background);
+}
+#limit-tab .limit-tab select option:last-child {
+    border-bottom: none; /* Remove border for last option */
+}
+#limit-tab .limit-tab {
+    border: 1px solid #373B3F;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    /* gap: 4px; */
+    justify-content: space-between;
+}
+#limit-tab .limit-tab input::placeholder {
+    color: var(--ash-text_color);
+    text-align: end;
+}
+
+#limit-tab .limit-tab .fa-angle-down {
+    font-size: 10px;
+    position: relative;
+    top: -2px;
+    left: 2px;
+}
+
+#limit-tab .post-checkbox {
+    align-items: center;
+}
+
+.purchase_section {
+    color: var(--ash-text_color);
+    font-size: 12px;
+}
+.purchase-btn {
+    width: 100%;
+}
+.purchase-btn button {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #483BEB 0%, #7847E1 47.92%, #DD568D 96.35%);
+    border: none;
+    border-radius: 8px;
+    color: var(--white_color);
+    cursor: pointer;
+}
+
+aside hr {
+    border-color: #394047;
+}
+
+.purchase-info h5 {
+    color: var(--white_color);
+}
+.deposit-btn {
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    color: var(--white_color);
+    background-color: #2754FF;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}

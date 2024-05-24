@@ -1,0 +1,73 @@
+.search_section {
+    margin: 20px 0px;
+    position: relative;
+}
+.search-input-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+.search-input {
+    border: 1px solid #373B3F;
+    width: 100%;
+    padding: 10px 20px 10px 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #20252B;
+    color: #fff;
+}
+.search-input::placeholder {
+    color: var(--ash-text_color2);
+}
+.search-input:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    font-size: 18px;
+}
+.filter-keys {
+    margin: 12px 0;
+    padding: 4px 0;
+    border-top: 1px solid var(--ash-text_color2);
+    border-bottom: 1px solid var(--ash-text_color2);
+}
+.filter-keys h5 {
+    cursor: pointer;
+}
+.filter-keys .active {
+    background-color: var(--ash-text_color2);
+    padding: 5px 7px;
+    border-radius: 10px;
+}
+.filter-trades {
+    gap: 30px;
+    overflow: auto;
+}
+.search_section h5 {
+    color: var(--white_color);
+}
+.search_section .filtered-details {
+    margin: 5px 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.filter-trades::-webkit-scrollbar {
+    height: 4px;
+}
+.filter-trades::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.filter-trades::-webkit-scrollbar-track {
+    background: transparent;
+}

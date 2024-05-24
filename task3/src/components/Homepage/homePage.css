@@ -1,0 +1,35 @@
+.main-content {
+    display: flex;
+    padding: 10px;
+    position: relative;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 15px;
+    /* grid-template-columns: 74% 25%; */
+    /* margin-top: 20px; */
+}
+
+
+/* Screen Responsiveness */
+
+@media (max-width: 767px) {
+    /* Main Content */
+    .main-content {
+        flex-direction: column;
+    }
+    .trading-section {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    .summary_section {
+        width: 100%;
+    }
+    .summary_tab {
+        max-width: 100%;
+    }
+    aside {
+        position: relative;
+        width: 100%;
+    }
+    
+}

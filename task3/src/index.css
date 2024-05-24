@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./utils/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff') format('woff2'),
+      url('./utils/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./utils/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Medium.woff2') format('woff2'),
+      url('./utils/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-MediumItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --basic_background: #1c2127;
+  --section_background: #32383F;
+  --ash-text_color: #A7B1BC;
+  --ash-text_color2: #777E90;
+  --ash-text_color3: #353945;
+  --white_color: #fff;
+  --basic_dark: #12171D;
+  --bg_active-color: #252A30;
+  --basic_green: #00C076;
+  --border-green: #25C26E;
+  --tab-bg_color: #1b1f24;
+  --tab-bg_color2: #21262C;
+  --basic-red: #FF6838;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;     
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--basic_background);
+  font-family: 'Satoshi', sans-serif;
+}
+
+/* utils */
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 12px;
+}
+
+
+.d-flex_h {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.d-flex_h__between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.d-flex_v {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hide_on_desktop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide_on_mobile {
+      display: none;
+  }
+  .hide_on_desktop {
+      display: flex;
+  }
+}

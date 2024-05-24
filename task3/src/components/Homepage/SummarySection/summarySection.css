@@ -1,0 +1,65 @@
+.summary_section {
+    background-color: var(--section_background);
+    padding: 10px;
+    border-radius: 8px;
+    width: 74.4%;
+}
+.summary_tab-title {
+
+}
+.summary_tab {
+    display: flex;
+    cursor: pointer;
+    max-width: 75%;
+    /* padding: 10px; */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    color: var(--ash-text_color);
+    background-color: var(--tab-bg_color);
+}
+.summary_tab div {
+    background-color: var(--tab-bg_color);
+    color: var(--ash-text_color);
+    padding: 10px 20px;
+    border-bottom: none;
+    text-align: center;
+    font-size: 12px;
+    width: 50%;
+    border-right: 1px solid var(--tab-bg_color2);
+}
+.summary_tab .active {
+    border-radius: 8px;
+    color: var(--white_color);
+    background-color: var(--tab-bg_color2);
+    box-shadow: 0px 3px 1px 0px #0000000A;
+    box-shadow: 0px 3px 8px 0px #0000001F;
+    margin: 1px;
+}
+.summary_tab-content {
+    display: none;
+}
+.summary_tab-content.active {
+    display: block;
+}
+.open-orders_section {
+    min-height: 300px;
+    width: 100%;
+}
+.open-orders_section .no-open_orders {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: var(--white_color);
+    max-width: 400px;
+    text-align: center;
+    height: 300px;
+}
+.open-orders_section .no-open_orders p {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: var(--ash-text_color);
+}
