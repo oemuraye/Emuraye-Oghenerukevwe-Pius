@@ -92,6 +92,24 @@
     <main class="main-content">
         <section class="trading-section">
             <section class="trading-chart">
+                <div class="trading-chart_keys d-flex_h">
+                    <h5>Time</h5>
+                    <h5 data-interval="1H" class="interval">1H</h5>
+                    <h5 data-interval="2H" class="interval">2H</h5>
+                    <h5 data-interval="4H" class="interval">4H</h5>
+                    <h5 data-interval="1D" class="interval active">1D</h5>
+                    <h5 data-interval="1W" class="interval">1W</h5>
+                    <h5 data-interval="1M" class="interval">1M</h5>
+                    <h5><i class="fa fa-angle-down" aria-hidden="true"></i></h5>
+                    <h5><img src="../utils/images/divider.png" alt="candle-chart_icon"></h5>
+                    <h5><img src="../utils/images/Candle Chart 1.png" alt="candle-chart_icon"></h5>
+                    <h5><img src="../utils/images/divider.png" alt="candle-chart_icon"></h5>
+                    <h5>Fx Indicators</h5>
+                    <h5><img src="../utils/images/divider.png" alt="candle-chart_icon"></h5>
+                    <h5><img src="../utils/images/undo.png" alt="candle-chart_icon"></h5>
+                    <h5><img src="../utils/images/redo.png" alt="candle-chart_icon"></h5>
+                    <h5><img src="../utils/images/divider.png" alt="candle-chart_icon"></h5>
+                </div>
                 <img src="../utils/images/Trading view.png" alt="trading" width="100%" height="">
             </section>
             <section class="trading-stats">
@@ -314,61 +332,61 @@
                     </section>
     
                     <section id="limit-tab" class="buy-tab_content d-flex_v">
-                        <div class="limit-tab d-flex_h">
+                        <div class="limit-tab">
                             <div class="d-flex_h">
                                 <span>Limit price</span>
                                 <img src="../utils/images/exclamation.png" alt="icon">
                             </div>
-                            <div>0.00 USD</div>
+                            <input id="limit-price" type="number" placeholder="0.00 USD">
                         </div>
-                        <div class="limit-tab d-flex_h">
+                        <div class="limit-tab">
                             <div class="d-flex_h">
                                 <span>Amount</span>
                                 <img src="../utils/images/exclamation.png" alt="icon">
                             </div>
-                            <div>0.00 USD</div>
+                            <input id="amount" type="number" placeholder="0.00 USD">
                         </div>
-                        <div class="limit-tab d-flex_h">
+                        <div class="limit-tab">
                             <div class="d-flex_h">
                                 <span>Type</span>
                                 <img src="../utils/images/exclamation.png" alt="icon">
                             </div>
-                            <div>
-                                Good till cancelled
-                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <div class="d-flex_h">
+                                <select>
+                                    <option>Good till cancelled</option>
+                                    <option>Fill or kill</option>
+                                    <option>Good till date</option>
+                                </select>
+                                <!-- <i class="fa fa-angle-down" aria-hidden="true"></i> -->
                             </div>
                         </div>
                         
-                        <div class="post-checkbox d-flex-h ">
+                        <div class="post-checkbox d-flex-h">
                             <input type="checkbox" checked="checked">
-                            <!-- <label class="chexk-container">
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label> -->
                             <span>Post Only</span>
                             <img src="../utils/images/exclamation.png" alt="icon">
                         </div>
-    
+                    
                         <div class="purchase_section d-flex_v">
                             <div class="d-flex_h__between">
                                 <h4>Total</h4>
-                                <h4>0.00</h4>
+                                <h4 id="total-value">0.00</h4>
                             </div>
                             <div class="purchase-btn">
                                 <button>Buy BTC</button>
                             </div>
                         </div>
-    
+                    
                         <hr>
-    
+                    
                         <div class="purchase-info d-flex_v">
                             <div class="d-flex_h__between">
                                 <h6>Total account value</h6>
                                 <h6>NGN <i class="fa fa-angle-down" aria-hidden="true"></i></h6>
                             </div>
-                            <h5>0.00</h5>
+                            <h5 id="total-value2">0.00</h5>
                         </div>
-    
+                    
                         <div class="purchase-info d-flex_v">
                             <div class="d-flex_h__between">
                                 <h6>Open Orders</h6>
@@ -376,9 +394,10 @@
                             </div>
                             <h5>0.00</h5>
                         </div>
-    
+                    
                         <button class="deposit-btn">Deposit</button>
                     </section>
+                    
     
                     <section id="market-tab" class="buy-tab_content"></section>
                     <section id="stop_limit-tab" class="buy-tab_content"></section>
@@ -387,6 +406,75 @@
             
             <section id="tab2" class="tab-content">
                 <h2>Sell Content</h2>
+            </section>
+
+            <hr>
+
+            <section class="search_section">
+                <h5>Select Market</h5>
+                <div class="search-input-container">
+                    <i class="fa fa-search search-icon"></i>
+                    <input oninput="handleSearch()" type="text" id="searchInput" class="search-input" placeholder="Search">
+                </div>
+
+                <div class="filter-keys d-flex_h">
+                    <h5 class="filter-all active">All</h5>
+                    <h5 class="filter-usd">USD</h5>
+                    <h5 class="filter-btc">BTC</h5>
+                </div>
+
+                <ul class="filter-trades trading-pairs-list d-flex_v">
+                    <li class="filtered-details">
+                        <div class="d-flex_h">
+                            <img src="../utils/images/btc_usdt-img.png" alt="coin-img" width="30px">
+                            <h5>BTC/USDT</h5>
+                        </div>
+                        <div class="d-flex_h">
+                            <span>$23,234.6</span>
+                            <span class="success_increase">$23,234.6</span>
+                        </div>
+                    </li>
+                    <li class="filtered-details">
+                        <div class="d-flex_h">
+                            <img src="../utils/images/btc_usdt-img.png" alt="coin-img" width="30px">
+                            <h5>ETH/USD</h5>
+                        </div>
+                        <div class="d-flex_h">
+                            <span>$23,234.6</span>
+                            <span class="success_increase">$23,234.6</span>
+                        </div>
+                    </li>
+                    <li class="filtered-details">
+                        <div class="d-flex_h">
+                            <img src="../utils/images/btc_usdt-img.png" alt="coin-img" width="30px">
+                            <h5>BTC/EUR</h5>
+                        </div>
+                        <div class="d-flex_h">
+                            <span>$23,234.6</span>
+                            <span class="success_increase">$23,234.6</span>
+                        </div>
+                    </li>
+                    <li class="filtered-details">
+                        <div class="d-flex_h">
+                            <img src="../utils/images/btc_usdt-img.png" alt="coin-img" width="30px">
+                            <h5>BTC/GBP</h5>
+                        </div>
+                        <div class="d-flex_h">
+                            <span>$23,234.6</span>
+                            <span class="success_increase">$23,234.6</span>
+                        </div>
+                    </li>
+                    <li class="filtered-details">
+                        <div class="d-flex_h">
+                            <img src="../utils/images/btc_usdt-img.png" alt="coin-img" width="30px">
+                            <h5>ETH/GBP</h5>
+                        </div>
+                        <div class="d-flex_h">
+                            <span>$23,234.6</span>
+                            <span class="success_increase">$23,234.6</span>
+                        </div>
+                    </li>
+                </ul>
             </section>
         </aside>
     </main>

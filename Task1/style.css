@@ -1,4 +1,5 @@
 @import url('./auth.css');
+@import url('./search.css');
 @font-face {
     font-family: 'Satoshi';
     src: url('../utils/Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Regular.woff') format('woff2'),
@@ -229,6 +230,29 @@ h6 {
     border-radius: 8px;
     padding: 10px;
 }
+.trading-chart_keys {
+    color: var(--ash-text_color);
+    font-weight: 500;
+    margin: 10px 0;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--section_background);
+    border-radius: 8px;
+}
+.trading-chart_keys .interval {
+    cursor: pointer;
+}
+.interval.active {
+    font-weight: bold;
+    background-color: var(--ash-text_color2); 
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+.trading-chart_keys .fa-angle-down {
+    font-size: 10px;
+    position: relative;
+    top: -2px;
+}
 .trading-stats_tab {
     display: flex;
     cursor: pointer;
@@ -318,6 +342,7 @@ h6 {
     width: 1%;
 }
 
+.success_increase,
 .order-records_summary  .success_increase,
 .order-records_table .success_increase .records__row1 {
     color: var(--basic_green);
@@ -469,25 +494,54 @@ aside {
     gap: 15px;
     padding: 10px;
 }
-#limit-tab > .limit-tab {
+
+#limit-tab .limit-tab input,
+#limit-tab .limit-tab select {
     color: var(--ash-text_color);
-    justify-content: space-between;
     font-size: 12px;
-    /* margin-top: 15px; */
-    border: 1px solid #373B3F;
+    padding: 10px 12px;
+    border-radius: 4px;
+    width: 100%; 
+    border: none;
+    background-color: var(--section_background);
+}
+
+#limit-tab .limit-tab select {
+    cursor: pointer;
+}
+#limit-tab .limit-tab select option {
+    cursor: pointer;
+    /* border: 1px solid #373B3F; */
     padding: 13px 16px 13px 16px;
     border-radius: 8px;
+    /* width: 214px; */
+    padding: 0;
+    border-radius: 12px;
+    background-color: var(--basic_background);
 }
-#limit-tab .limit-tab .d-flex_h {
+#limit-tab .limit-tab select option:last-child {
+    border-bottom: none; /* Remove border for last option */
+}
+#limit-tab .limit-tab {
+    border: 1px solid #373B3F;
+    display: grid;
+    grid-template-columns: 40% 60%;
     align-items: center;
-    gap: 4px;
+    /* gap: 4px; */
+    justify-content: space-between;
 }
+#limit-tab .limit-tab input::placeholder {
+    color: var(--ash-text_color);
+    text-align: end;
+}
+
 #limit-tab .limit-tab .fa-angle-down {
     font-size: 10px;
     position: relative;
     top: -2px;
     left: 2px;
 }
+
 #limit-tab .post-checkbox {
     align-items: center;
 }
@@ -512,7 +566,7 @@ aside {
     cursor: pointer;
 }
 
-.buy-tab_content hr {
+aside hr {
     border-color: #394047;
 }
 

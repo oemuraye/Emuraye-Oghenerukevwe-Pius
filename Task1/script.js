@@ -73,3 +73,71 @@ initializeTabs('.trading-stats_tab', '.trading_tab-content');
 initializeTabs(".summary_tab", ".summary_tab-content")
 
 
+
+// Task 2 - handle search input
+const handleSearch = () => {
+    const searchValue = document.getElementById('searchInput').value.toLowerCase();
+    const tradingPairs = document.querySelectorAll('.trading-pairs-list li');
+
+    tradingPairs.forEach(pair => {
+        const pairText = pair.textContent.toLowerCase();
+        if (pairText.includes(searchValue)) {
+            pair.style.display = '';
+        } else {
+            pair.style.display = 'none';
+        }
+    });
+}
+
+
+// Function to update total value
+function updateTotal() {
+    var priceInput = document.getElementById('limit-price').value.trim();
+    var amountInput = document.getElementById('amount').value.trim();
+    
+    var price = parseFloat(priceInput);
+    var amount = parseFloat(amountInput);
+    
+    if (!isNaN(price) && !isNaN(amount)) {
+        var totalValue = price * amount;
+        
+        document.getElementById('total-value').innerText = totalValue.toFixed(2);
+        document.getElementById('total-value2').innerText = totalValue.toFixed(2);
+    } else {
+        document.getElementById('total-value').innerText = '0.00';
+        document.getElementById('total-value2').innerText = '0.00';
+    }
+}
+
+// Add event listeners to input fields
+document.getElementById('limit-price').addEventListener('input', updateTotal);
+document.getElementById('amount').addEventListener('input', updateTotal);
+
+
+
+// allows users to switch between different time intervals for the candlestick 
+document.addEventListener('DOMContentLoaded', function() {
+    var canvas = document.getElementById('trading-chart');
+    // var ctx = canvas.getContext('2d');
+
+    // Function to update chart based on selected interval
+    function updateChart(interval) {
+        console.log('Updating chart with interval:', interval);
+    }
+
+    // Add click event listener to interval options
+    var intervalOptions = document.querySelectorAll('.interval');
+    intervalOptions.forEach(function(option) {
+        option.addEventListener('click', function() {
+            var selectedInterval = this.dataset.interval;
+
+            intervalOptions.forEach(function(opt) {
+                opt.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            updateChart(selectedInterval);
+        });
+    });
+});
