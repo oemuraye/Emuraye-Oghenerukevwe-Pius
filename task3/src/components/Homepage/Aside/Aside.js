@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import exclamationIcon from '../../../utils/images/exclamation.png';
 
@@ -7,15 +7,38 @@ import SearchSection from './SearchSection/SearchSection';
 
 const Aside = () => {
     const [activeTab, setActiveTab] = useState('tab1');
-  const [activeBuyTab, setActiveBuyTab] = useState('buy-tab1');
+    const [activeBuyTab, setActiveBuyTab] = useState('buy-tab1');
+    const [limitPrice, setLimitPrice] = useState('');
+    const [amount, setAmount] = useState('');
+    const [totalValue, setTotalValue] = useState('0.00');
+  
+    useEffect(() => {
+    const price = parseFloat(limitPrice);
+    const quantity = parseFloat(amount);
 
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
+    if (!isNaN(price) && !isNaN(quantity)) {
+        const total = price * quantity;
+        setTotalValue(total.toFixed(2));
+        } else {
+        setTotalValue('0.00');
+        }
+    }, [limitPrice, amount]);
+        
+    const handleLimitPriceChange = (e) => {
+        setLimitPrice(e.target.value.trim());
+    };
 
-  const handleBuyTabClick = (tab) => {
-    setActiveBuyTab(tab);
-  };
+    const handleAmountChange = (e) => {
+    setAmount(e.target.value.trim());
+    };
+
+    const handleTabClick = (tab) => {
+        setActiveTab(tab);
+    };
+
+    const handleBuyTabClick = (tab) => {
+        setActiveBuyTab(tab);
+    };
   return (
     <aside>
       <section className="tabs">
@@ -52,14 +75,14 @@ const Aside = () => {
                           <span>Limit price</span>
                           <img src={exclamationIcon} alt="icon" />
                       </div>
-                      <input id="limit-price" type="number" placeholder="0.00 USD" />
+                      <input onChange={handleLimitPriceChange} id="limit-price" type="number" placeholder="0.00 USD" />
                   </div>
                   <div className="limit-tab">
                       <div className="d-flex_h">
                           <span>Amount</span>
                           <img src={exclamationIcon} alt="icon" />
                       </div>
-                      <input id="amount" type="number" placeholder="0.00 USD" />
+                      <input onChange={handleAmountChange } id="amount" type="number" placeholder="0.00 USD" />
                   </div>
                   <div className="limit-tab">
                       <div className="d-flex_h">
@@ -86,7 +109,7 @@ const Aside = () => {
                   <div className="purchase_section d-flex_v">
                       <div className="d-flex_h__between">
                           <h4>Total</h4>
-                          <h4 id="total-value">0.00</h4>
+                          <h4 id="total-value">{totalValue}</h4>
                       </div>
                       <div className="purchase-btn">
                           <button>Buy BTC</button>
@@ -100,7 +123,7 @@ const Aside = () => {
                           <h6>Total account value</h6>
                           <h6>NGN <i className="fa fa-angle-down" aria-hidden="true"></i></h6>
                       </div>
-                      <h5 id="total-value2">0.00</h5>
+                      <h5 id="total-value2">{totalValue}</h5>
                   </div>
               
                   <div className="purchase-info d-flex_v">

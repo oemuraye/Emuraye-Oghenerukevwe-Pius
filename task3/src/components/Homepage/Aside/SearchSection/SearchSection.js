@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import coinImg from '../../../../utils/images/btc_usdt-img.png';
 
@@ -6,74 +6,52 @@ import './searchInput.css';
 
 
 const SearchSection = () => {
-  return (
-    <section class="search_section">
+    const [searchValue, setSearchValue] = useState('');
+
+    const handleSearch = (event) => {
+      setSearchValue(event.target.value.toLowerCase());
+    };
+  
+    const tradingPairs = [
+      { name: 'BTC/USDT', price: '$23,234.6', change: '$23,234.6' },
+      { name: 'ETH/USD', price: '$23,234.6', change: '$23,234.6' },
+      { name: 'BTC/EUR', price: '$23,234.6', change: '$23,234.6' },
+      { name: 'BTC/GBP', price: '$23,234.6', change: '$23,234.6' },
+      { name: 'ETH/GBP', price: '$23,234.6', change: '$23,234.6' },
+    ];
+  
+    const filteredPairs = tradingPairs.filter(pair => pair.name.toLowerCase().includes(searchValue));
+  
+    return (
+      <section className="search_section">
         <h5>Select Market</h5>
-        <div class="search-input-container">
-            <i class="fa fa-search search-icon"></i>
-            <input type="text" id="searchInput" class="search-input" placeholder="Search" />
+        <div className="search-input-container">
+          <i className="fa fa-search search-icon"></i>
+          <input type="text" id="searchInput" className="search-input" placeholder="Search" value={searchValue} onChange={handleSearch}  />
         </div>
-
-        <div class="filter-keys d-flex_h">
-            <h5 class="filter-all active">All</h5>
-            <h5 class="filter-usd">USD</h5>
-            <h5 class="filter-btc">BTC</h5>
+  
+        <div className="filter-keys d-flex_h">
+          <h5 className="filter-all active">All</h5>
+          <h5 className="filter-usd">USD</h5>
+          <h5 className="filter-btc">BTC</h5>
         </div>
-
-        <ul class="filter-trades trading-pairs-list d-flex_v">
-            <li class="filtered-details">
-                <div class="d-flex_h">
-                    <img src={coinImg} alt="coin-img" width="30px" />
-                    <h5>BTC/USDT</h5>
-                </div>
-                <div class="d-flex_h">
-                    <span>$23,234.6</span>
-                    <span class="success_increase">$23,234.6</span>
-                </div>
+  
+        <ul className="filter-trades trading-pairs-list d-flex_v">
+          {filteredPairs.map((pair, index) => (
+            <li className="filtered-details" key={index}>
+              <div className="d-flex_h">
+                <img src={coinImg} alt="coin-img" width="30px" />
+                <h5>{pair.name}</h5>
+              </div>
+              <div className="d-flex_h">
+                <span>{pair.price}</span>
+                <span className="success_increase">{pair.change}</span>
+              </div>
             </li>
-            <li class="filtered-details">
-                <div class="d-flex_h">
-                    <img src={coinImg} alt="coin-img" width="30px" />
-                    <h5>ETH/USD</h5>
-                </div>
-                <div class="d-flex_h">
-                    <span>$23,234.6</span>
-                    <span class="success_increase">$23,234.6</span>
-                </div>
-            </li>
-            <li class="filtered-details">
-                <div class="d-flex_h">
-                    <img src={coinImg} alt="coin-img" width="30px" />
-                    <h5>BTC/EUR</h5>
-                </div>
-                <div class="d-flex_h">
-                    <span>$23,234.6</span>
-                    <span class="success_increase">$23,234.6</span>
-                </div>
-            </li>
-            <li class="filtered-details">
-                <div class="d-flex_h">
-                    <img src={coinImg} alt="coin-img" width="30px" />
-                    <h5>BTC/GBP</h5>
-                </div>
-                <div class="d-flex_h">
-                    <span>$23,234.6</span>
-                    <span class="success_increase">$23,234.6</span>
-                </div>
-            </li>
-            <li class="filtered-details">
-                <div class="d-flex_h">
-                    <img src={coinImg} alt="coin-img" width="30px" />
-                    <h5>ETH/GBP</h5>
-                </div>
-                <div class="d-flex_h">
-                    <span>$23,234.6</span>
-                    <span class="success_increase">$23,234.6</span>
-                </div>
-            </li>
+          ))}
         </ul>
-    </section>
-  )
-}
+      </section>
+    );
+  };
 
-export default SearchSection
+export default SearchSection;
