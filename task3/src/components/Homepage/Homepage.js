@@ -6,10 +6,10 @@ import Aside from './Aside/Aside';
 
 import './homePage.css';
 
-const Homepage = () => {
+const Homepage = ({selectedPair}) => {
   return (
     <main className='main-content'>
-      <TradingSection />
+      <TradingSection selectedPair={selectedPair} />
       <SummarySection />
       <Aside />
     </main>

@@ -6,11 +6,11 @@ import TradingStats from './TradingStats/TradingStats';
 
 import './tradingSection.css';
 
-const TradingSection = () => {
+const TradingSection = ({selectedPair}) => {
   return (
     <section className="trading-section">
-      <TradingChart />     
-      <TradingStats />
+      <TradingChart selectedPair={selectedPair} />     
+      <TradingStats selectedPair={selectedPair} />
     </section>
   )
 }

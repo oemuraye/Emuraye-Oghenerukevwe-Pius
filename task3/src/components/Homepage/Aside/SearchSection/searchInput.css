@@ -60,6 +60,7 @@
     margin: 5px 0;
     display: grid;
     grid-template-columns: 50% 50%;
+    gap: 20px;
 }
 .filter-trades::-webkit-scrollbar {
     height: 4px;

@@ -6,7 +6,7 @@ import './header.css';
 import Navbar from './Navbar';
 import CoinInfo_Section from './CoinInfo_Section';
 
-const Header = () => {
+const Header = ({handlePairChange, selectedPair, tradingPairs}) => {
   const location = useLocation();
 
   const hideCoinSection = location.pathname === '/auth'
@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <section className='home-header'>
         <Navbar />
-        {!hideCoinSection && <CoinInfo_Section />}
+        {!hideCoinSection && <CoinInfo_Section handlePairChange={handlePairChange} selectedPair={selectedPair} tradingPairs={tradingPairs} />}
     </section>
   )
 }

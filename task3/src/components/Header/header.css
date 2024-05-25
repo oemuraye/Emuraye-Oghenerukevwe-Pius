@@ -112,6 +112,33 @@
     color: var(--basic_green);
 }
 
+.coin-info_section select {
+    color: var(--ash-text_color);
+    font-size: 12px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    width: 110px; 
+    border: none;
+    background-color: var(--section_background);
+}
+
+.coin-info_section select {
+    cursor: pointer;
+}
+.coin-info_section select option {
+    cursor: pointer;
+    /* border: 1px solid #373B3F; */
+    padding: 13px 16px 13px 16px;
+    border-radius: 8px;
+    /* width: 214px; */
+    padding: 0;
+    border-radius: 12px;
+    background-color: var(--basic_background);
+}
+.coin-info_section select option:last-child {
+    border-bottom: none; /* Remove border for last option */
+}
+
 
 
 /* Screen Responsiveness */
@@ -159,6 +186,10 @@
         flex-direction: column;
         justify-content: start;
         align-items: start;
+    }
+    .coin-info_section .coin-select.d-flex_h {
+        align-items: start;
+        flex-wrap: wrap;
     }
     .price-info .prices {
         min-width: 120px;

@@ -95,12 +95,24 @@
 .order-records_table .order-records_details {
     margin: 20px 0;
     gap: 25px;
+    overflow-x: auto;
+}
+.order-records_table .order-records_details::-webkit-scrollbar {
+    height: 0px;
+}
+.order-records_table .order-records_details::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.order-records_table .order-records_details::-webkit-scrollbar-track {
+    background: transparent;
 }
 .order-records_table .order-records_details .d-flex_h {
     justify-content: space-around;
     font-weight: 500;
     color: var(--white_color);
     position: relative;
+    top: 10px;
 }
 .progress_red {
     position: absolute;

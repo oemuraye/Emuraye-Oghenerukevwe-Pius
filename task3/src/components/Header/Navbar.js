@@ -18,9 +18,9 @@ const Navbar = () => {
   return (
     <nav className="header__nav d-flex_h__between">
         <section className="d-flex_h">
-            <div className="header-logo">
+            <Link to="/" className="header-logo">
                 <img src={logo} alt="logo"/>
-            </div>
+            </Link>
             <ul className={`header-menu_links ${menuVisible ? 'show' : ''}`}>
                 <li className="active"><Link to="" className="active">Exchange</Link></li>
                 <li><Link to="">Wallet</Link></li>

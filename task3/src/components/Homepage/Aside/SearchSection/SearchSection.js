@@ -32,7 +32,7 @@ const SearchSection = () => {
   
         <div className="filter-keys d-flex_h">
           <h5 className="filter-all active">All</h5>
-          <h5 className="filter-usd">USD</h5>
+          <h5 className="filter-usd">USDT</h5>
           <h5 className="filter-btc">BTC</h5>
         </div>
   
