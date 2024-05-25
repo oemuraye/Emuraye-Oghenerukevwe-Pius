@@ -19,6 +19,9 @@
 Binance API
 
    ***Usage***
+- For task1, task1.5 and task2 navigate to task1 directory (index.html and auth.html respectively) 
+
+- For task3, and task5 navigate to task3 directory
 - Clone the repository: git clone <[https://github.com/oemuraye/Emuraye-Oghenerukevwe-Pius.git](https://github.com/oemuraye/Emuraye-Oghenerukevwe-Pius.git)>
 - For the React App, Navigate to the project directory: cd Emuraye-Oghenerukevwe-Pius/task3
 - Install dependencies: npm install

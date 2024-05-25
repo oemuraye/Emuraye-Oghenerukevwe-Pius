@@ -36,7 +36,7 @@ const Navbar = () => {
             </div>
             <div className="d-flex_h hide_on_mobile">
                 <Link to=""><img src={globeIcon} alt="Globe Icon" /></Link>
-                <Link to=""><img src={signOutIcon} alt="Sign Out Icon" /></Link>
+                <Link to="/auth"><img src={signOutIcon} alt="Sign Out Icon" /></Link>
             </div>
             <div className="d-flex_h hide_on_desktop">
                 <span className="profile-pic">
