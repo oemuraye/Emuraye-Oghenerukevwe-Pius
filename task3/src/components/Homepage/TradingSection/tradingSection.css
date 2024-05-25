@@ -70,6 +70,9 @@
     display: block;
 }
 
+.order-tab_filter .success-filter {
+    gap: 5px;
+}
 .order-tab_filter .success-filter img {
     padding: 10px;
 }
@@ -77,12 +80,13 @@
     border-radius: 4px;
     background-color: var(--ash-text_color3);
 }
-.order-tab_filter .num-filter {
+.order-tab_filter .num-filter select {
     background-color: var(--ash-text_color3);
-    padding: 10px 15px;
+    padding: 7px 12px;
     border-radius: 5px;
     color: #F4F5F6;
     font-size: 12px;
+    border: none;
 }
 
 .order-records_table .order-records__title {
@@ -93,7 +97,7 @@
     margin-bottom: 10px;
 }
 .order-records_table .order-records_details {
-    margin: 20px 0;
+    /* margin: 20px 0; */
     gap: 25px;
     overflow-x: auto;
 }
@@ -112,7 +116,8 @@
     font-weight: 500;
     color: var(--white_color);
     position: relative;
-    top: 10px;
+    /* top: 10px; */
+    margin: 5px 0;
 }
 .progress_red {
     position: absolute;
@@ -126,8 +131,8 @@
     background-color: #25c26e18;
     height: 28px;
 }
-.progress_width-100 {
-    width: 100%;
+.progress_width-30 {
+    width: 30%;
 }
 .progress_width-50 {
     width: 50%;

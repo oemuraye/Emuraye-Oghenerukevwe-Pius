@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from 'react';
-
 import coinImg from '../../utils/images/btc_usdt-img.png';
-import axios from 'axios';
 
 const CoinInfo_Section = ({handlePairChange, selectedPair, tradingPairs}) => {
     const selectedPairData = tradingPairs.find(pair => pair.symbol === selectedPair);
-    console.log(selectedPairData);
   return (
     <section className="coin-info_section d-flex_h">
         <div className="coin-select d-flex_h">

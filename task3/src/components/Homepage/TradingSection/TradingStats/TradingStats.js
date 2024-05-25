@@ -7,10 +7,15 @@ import filterIcon3 from '../../../../utils/images/filter3.png';
 const TradingStats = ({selectedPair}) => {
     const [activeTab, setActiveTab] = useState('trading-stats_tab1');
     const [orderBook, setOrderBook] = useState({ bids: [], asks: [] });
+    const [limit, setLimit] = useState('3');
+
+    const handleLimitChange = (event) => {
+      setLimit(event.target.value);
+    };
 
     useEffect(() => {
         fetchOrderBook(selectedPair);
-    }, [selectedPair]);
+    }, [selectedPair, limit]);
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
@@ -18,7 +23,7 @@ const TradingStats = ({selectedPair}) => {
 
     const fetchOrderBook = async (pair) => {
         try {
-            const response = await axios.get(`https://api.binance.com/api/v3/depth?symbol=${pair}&limit=10`);
+            const response = await axios.get(`https://api.binance.com/api/v3/depth?symbol=${pair}&limit=${limit}`);
             setOrderBook(response.data);
         } catch (error) {
             console.error('Error fetching order book:', error);
@@ -53,8 +58,12 @@ const TradingStats = ({selectedPair}) => {
             <img src={filterIcon3} alt="filter-icon" />
           </div>
           <div className="num-filter d-flex_h">
-            <h5>10</h5>
-            <i className="fa fa-angle-down" aria-hidden="true"></i>
+            <select onChange={handleLimitChange} value={limit}>
+              <option value="3">3</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
           </div>
         </section>
 
@@ -85,7 +94,7 @@ const TradingStats = ({selectedPair}) => {
                 <div>
                   <h6 className="records__row3">{(bid[0] * bid[1]).toFixed(2)}</h6>
                 </div>
-                <div className="progress_red progress_width-50"></div>
+                <div className="progress_red progress_width-30"></div>
               </div>
             ))}
           </section>
